@@ -60,23 +60,36 @@ public class MainMenu extends JFrame {
         JButton parentalControlButton = new JButton("Parental Controls");
         JButton exitButton = new JButton("Exit");
 
-        // Attach action listeners to buttons (expand actions as needed)
+        // Attach action listeners to buttons with expanded functionality
         newGameButton.addActionListener(e -> {
-            // Transition to new game / pet selection screen
-            System.out.println("Start New Game clicked");
+            // Transition to the new game / pet selection screen
+            PetSelectionScreen petSelectionScreen = new PetSelectionScreen();
+            petSelectionScreen.setVisible(true);
+            // Close the main menu after launching the pet selection screen
+            MainMenu.this.dispose();
         });
+
         loadGameButton.addActionListener(e -> {
-            // Transition to load game screen
-            System.out.println("Load Game clicked");
+            // Transition to the load game screen
+            LoadGameScreen loadGameScreen = new LoadGameScreen();
+            loadGameScreen.setVisible(true);
+            MainMenu.this.dispose();
         });
+
         tutorialButton.addActionListener(e -> {
-            // Transition to tutorial screen
-            System.out.println("Tutorial clicked");
+            // Transition to the tutorial screen
+            TutorialScreen tutorialScreen = new TutorialScreen();
+            tutorialScreen.setVisible(true);
+            MainMenu.this.dispose();
         });
+
         parentalControlButton.addActionListener(e -> {
-            // Transition to parental control screen
-            System.out.println("Parental Controls clicked");
+            // Transition to the parental control screen
+            ParentalControlScreen parentalScreen = new ParentalControlScreen();
+            parentalScreen.setVisible(true);
+            MainMenu.this.dispose();
         });
+
         exitButton.addActionListener(e -> {
             System.exit(0);
         });
@@ -86,11 +99,11 @@ public class MainMenu extends JFrame {
         buttonPanel.add(tutorialButton);
         buttonPanel.add(parentalControlButton);
         buttonPanel.add(exitButton);
-        
+
         // Wrap button panel in a center panel to help center it vertically/horizontally
         JPanel centerPanel = new JPanel(new GridBagLayout());
         centerPanel.add(buttonPanel);
-        
+
         panel.add(centerPanel, BorderLayout.CENTER);
 
         // Footer panel with a placeholder for a game image/graphic
