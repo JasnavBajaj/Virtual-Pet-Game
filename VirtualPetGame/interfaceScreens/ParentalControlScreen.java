@@ -27,6 +27,9 @@ public class ParentalControlScreen extends JFrame {
     private static final String PARENTAL_PASSWORD = "parent123";
 
     public ParentalControlScreen() {
+
+        
+
         setTitle("Parental Controls");
         setSize(800, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -87,7 +90,14 @@ public class ParentalControlScreen extends JFrame {
         // "Back" button to exit the screen (or return to the main menu)
         JButton backButton = new JButton("Back");
         backButton.addActionListener(e -> {
+            System.out.println("Returning to Main Menu");
+
+            // Close the current window
             dispose();
+        
+            // Launch the Main Menu screen
+            MainMenu mainMenu = new MainMenu();
+            mainMenu.setVisible(true);
         });
         bottomPanel.add(backButton);
 

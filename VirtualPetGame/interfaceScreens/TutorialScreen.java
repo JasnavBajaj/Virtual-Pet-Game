@@ -22,6 +22,8 @@ import java.awt.*;
 public class TutorialScreen extends JFrame {
 
     public TutorialScreen() {
+
+
         setTitle("Tutorial / Instructions");
         setSize(800, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -80,11 +82,14 @@ public class TutorialScreen extends JFrame {
         // Bottom panel with a "Back to Main Menu" button.
         JButton backButton = new JButton("Back to Main Menu");
         backButton.addActionListener(e -> {
-            // Replace this action with actual navigation logic.
             System.out.println("Returning to Main Menu");
+
+            // Close the current window
             dispose();
-            // Optionally, you could launch the MainMenu screen:
-            // new MainMenu().setVisible(true);
+        
+            // Launch the Main Menu screen
+            MainMenu mainMenu = new MainMenu();
+            mainMenu.setVisible(true);
         });
         JPanel bottomPanel = new JPanel();
         bottomPanel.add(backButton);

@@ -1,5 +1,7 @@
 package group29.VirtualPetGame.interfaceScreens;
 
+
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -92,8 +94,10 @@ public class LoadGameScreen extends JFrame {
             // Implement navigation logic to return to the main menu.
             System.out.println("Returning to Main Menu");
             dispose();
-            // Optionally, launch the MainMenu screen:
-            // new MainMenu().setVisible(true);
+            
+            // Launch the Main Menu screen
+            MainMenu mainMenu = new MainMenu();
+            mainMenu.setVisible(true);
         });
 
         bottomPanel.add(loadButton);
